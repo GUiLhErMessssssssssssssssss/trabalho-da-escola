@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginha do brimo</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <header>
+        <h1>Loginha do brimo</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarConteudo('produtos')">Produtos</a></li>
+                <li><a href="#" onclick="mostrarConteudo('contato')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="conteudoProdutos">
+        <!-- Produtos aqui -->
+    </main>
+
+    <div id="contato">
+        <h2>Entre em contato conosco</h2>
+        <form action="enviar.php" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="detalhes" id="detalhesProduto">
+        <span class="fechar" onclick="fecharDetalhes()">X</span>
+        <img id="imagemDetalhes" src="" alt="">
+        <h2 id="tituloDetalhes"></h2>
+        <p id="descricaoDetalhes"></p>
+    </div>
+
+    <button id="carrinho" onclick="mostrarCarrinho()">Carrinho</button>
+
+    <div class="carrinho" id="conteudoCarrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="listaCarrinho">
+            <!-- Os itens do carrinho serão adicionados aqui dinamicamente -->
+        </ul>
+        <p>Total: R$ <span id="totalCarrinho">0.00</span></p>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
